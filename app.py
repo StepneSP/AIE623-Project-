@@ -9,7 +9,7 @@ from PIL import Image
 # Page config
 st.set_page_config(
     page_title="CalorieNet - Food Nutrition Analyzer",
-    page_icon="🍎",
+    page_icon="🍀",
     layout="wide",
     initial_sidebar_state="collapsed"
 )
@@ -26,7 +26,7 @@ st.markdown("""
     }
     .sub-header {
         text-align: center;
-        color: #A23B72;
+        color: #1fd655;
         font-size: 1.2rem;
         margin-bottom: 2rem;
     }
@@ -48,13 +48,13 @@ st.markdown("""
     }
     .food-tag {
         display: inline-block;
-        background: #f0f2f6;
+        background: #1fd655;
         color: #262730;
         padding: 0.3rem 0.8rem;
         border-radius: 20px;
         margin: 0.2rem;
         font-size: 0.9rem;
-        border: 2px solid #e0e0e0;
+        border: 2px solid #00ab41;
     }
     .confidence-bar {
         height: 8px;
@@ -161,7 +161,7 @@ def display_detected_foods(data):
 
 def main():
     # Header
-    st.markdown('<h1 class="main-header">🍎 CalorieNet</h1>', unsafe_allow_html=True)
+    st.markdown('<h1 class="main-header">🍀CalorieNet</h1>', unsafe_allow_html=True)
     st.markdown('<p class="sub-header">AI-Powered Food Nutrition Analyzer</p>', unsafe_allow_html=True)
     
     # Check API status
@@ -192,10 +192,10 @@ def main():
         # Center the analyze button
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            analyze_clicked = st.button("🔍 Analyze Nutrition", type="primary", use_container_width=True)
+            analyze_clicked = st.button("🔍 Analyze Nutrition", type="secondary", use_container_width=True)
         
         if analyze_clicked:
-            with st.spinner("🧠 AI is analyzing your food..."):
+            with st.spinner("👨‍⚕️ AI is analyzing your food..."):
                 # Reset file pointer
                 uploaded_file.seek(0)
                 
@@ -217,7 +217,7 @@ def main():
             st.markdown("---")
             
             # Key metrics
-            st.markdown("### 📊 Nutrition Summary")
+            st.markdown("### 🔎 Nutrition Summary")
             display_metrics(result)
             
             st.markdown("<br>", unsafe_allow_html=True)
@@ -228,7 +228,7 @@ def main():
     # Footer
     st.markdown("---")
     st.markdown(
-        "<p style='text-align: center; color: #666; font-size: 0.9rem;'>"
+        "<p style='text-align: center; color: #cefad0; font-size: 0.9rem;'>"
         "Made with ❤️ using CalorieNet AI | Upload food images for instant nutrition analysis"
         "</p>", 
         unsafe_allow_html=True
